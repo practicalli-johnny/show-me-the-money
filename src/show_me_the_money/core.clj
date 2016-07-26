@@ -67,10 +67,28 @@
 
 
 (* 20000.0 income-tax-rate)
-
-
 ;; (* 1.0 20/100)
 ;; 20/100 
 
 
 ;; (* taxable-salary national-insurance-rate)
+
+
+(defn money-i-want
+  [money-in-my-pocket]
+  (if (<= money-in-my-pocket 43000)
+    (+ money-in-my-pocket (* money-in-my-pocket 25/100))
+    (+ money-in-my-pocket (* money-in-my-pocket 45/100))))
+
+(money-i-want 40000)
+;;=> 50000N
+
+(apply-tax 50000)
+;; => 39400N
+
+(money-i-want 50000)
+;;=> 72500N
+
+(apply-tax 72500)
+;; 50000
+
