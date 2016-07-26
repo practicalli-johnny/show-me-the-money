@@ -34,6 +34,26 @@
     (- income (basic-tax income) (high-taxes income))))
 
 
+(defn monthly-salary
+  [full-salary]
+  (/ (apply-tax full-salary) 12))
+
+(defn weekly-salary
+  [full-salary]
+  (/ (apply-tax full-salary) 52))
+
+(defn hourly-salary
+  [full-salary]
+  (/ (weekly-salary full-salary) 40 ))
+
+(monthly-salary 50000)
+;; => 3283.3333
+(weekly-salary 50000.0)
+;; => 757.6923076923077
+
+(hourly-salary 50000.0)
+;; => 18.942307692307693
+
 ;; (basic-tax 20000)
 ;; (high-taxes 20000)
 
