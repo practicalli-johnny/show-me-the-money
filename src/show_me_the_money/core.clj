@@ -107,3 +107,23 @@
 (apply-tax 72500)
 ;; 50000
 
+
+;; exploring some clojure features
+
+;; (cons 4 5 ())
+(cons 4 (cons 5 ()))
+
+(first '(1 2 3 4))
+(rest  )
+
+(map + '(1 2 3 4) '(5 6 7 8))
+
+(def fucntion-name 
+  )
+
+((fn [message] (str "I am a lambda" message))", Hello")
+
+fucntion-name
+
+( #(str "I am shorthand for a lambda" %1  %2) ", Hello" ", this is crazy")
+
