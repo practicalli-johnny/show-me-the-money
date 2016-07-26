@@ -1,5 +1,20 @@
 (ns show-me-the-money.core)
 
+;; tax map - refactor taxes into one data structure
+(def taxes
+  {personal-allowance 11000
+   :income-tax {:basic 1/5
+                :high  40/100
+                :additional 45/100}})
+
+;; working with maps & keywords
+;; (taxes :personal-allowance)
+;; (:personal-allowance taxes)
+;; (:basic  (taxes :income-tax))
+;; (get taxes :income-tax)
+;; (get-in taxes [:income-tax :basic])
+
+
 ;; No taxes on personal allowance
 (def personal-allowance 11000)
 
